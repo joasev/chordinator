@@ -1,0 +1,62 @@
+{
+    "mode" :
+        {
+            "chords"  : 1,
+            "progressions"  : 0,
+
+            "progressive" : 0
+        },
+
+    "progressions": 
+        {
+            "I IV V" : 1,
+            "I V I"  : 0,
+            "V" : 1,
+            "VI, IV, I, V": 0
+        },
+    
+    "upper_triad_inversion":
+        {
+            "root"            : 0,
+            "1st inversion"   : 0,
+            "2nd inversion"   : 1
+        },
+
+    "quality":
+        {
+            "M"    : 0,
+            "m"    : 0,
+            "dis"  : 0,
+            "m7"   : 0,
+            "maj7" : 1,
+            "7"    : 0,
+            "miMa7": 0,
+            "ø"    : 0,
+            "o"    : 0
+        },
+
+    "root":
+        {
+            "A" : 1,
+            "A#": 0,
+            "Bb": 0,
+            "B" : 1,
+            "Cb": 0,
+            "C" : 1,
+            "C#": 0,
+            "Db": 0,
+            "D" : 1,
+            "D#": 0,
+            "Eb": 0,
+            "E" : 1,
+            "Fb": 0,
+            "F" : 1,
+            "F#": 0,
+            "Gb": 0,
+            "G" : 1,
+            "G#": 0,
+            "Ab": 0
+        }
+
+
+}
