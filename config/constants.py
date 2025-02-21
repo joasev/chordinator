@@ -9,4 +9,9 @@ BLACK = [  0,   0,   0]
 WHITE = [255, 255, 255]
 RED = [255,0,0]
 SIZE = [total_piano_width, 380]
-font1 =  pygame.font.SysFont("Arial",30)
+
+
+def get_font():
+    if not pygame.get_init():
+        raise RuntimeError("Pygame must be initialized before using fonts.")
+    return pygame.font.SysFont("Arial", 30)

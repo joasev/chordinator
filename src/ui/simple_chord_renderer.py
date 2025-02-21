@@ -1,6 +1,6 @@
-import constants
-import pygame_custom_utils
-from PianitoRenderer import Pianito
+import config.constants as constants
+import src.utils.pygame_custom_utils as pygame_custom_utils
+from src.ui.pianito_renderer import Pianito
 
 class SimpleChordRenderer:
     SIZE = constants.SIZE
@@ -15,20 +15,20 @@ class SimpleChordRenderer:
     def set_display_flashcard(self,flashcard):
         #self.current_flaschard = flashcard
         if flashcard is not None:
-            print("Play this: "+flashcard.chord_root+""+str(flashcard.chord_quality)+" Upper triad position: "+str(flashcard.upper_triad_position))
+            print("Play this: " + flashcard.chord_root + "" + str(flashcard.chord_quality) + " Upper triad position: " + str(flashcard.upper_triad_position))
             #Esto es de rendereo de flashCard
-            (self.instruction,self.text) = pygame_custom_utils.get_instruction_n_chord_to_render(constants.font1,constants.WHITE,flashcard)
+            (self.instruction,self.text) = pygame_custom_utils.get_instruction_n_chord_to_render(constants.get_font(), constants.WHITE,flashcard)
         else:
-            (self.instruction,self.text) = (None,None)
+            (self.instruction, self.text) = (None, None)
             print("Empty flashcard cannot be displayed")
 
     def set_success_message(self):
         print("Well done!")
-        self.text = constants.font1.render("Well played!",True, constants.WHITE)
+        self.text = constants.get_font().render("Well played!", True, constants.WHITE)
 
     def set_skipped_message(self):
         print("Skipped!")
-        self.text = constants.font1.render("Skipped!",True, constants.WHITE)
+        self.text = constants.get_font().render("Skipped!", True, constants.WHITE)
 
     def render(self,screen):
         screen.fill(constants.BLACK)

@@ -1,14 +1,14 @@
 #import Data
 import random
-from ProgressionFlashcard import ProgressionFlashcard
+from src.core.progressions.progression_flashcard import ProgressionFlashcard
 
 class ProgressionDeck:
 
-    def __init__(self,settings):
+    def __init__(self, settings):
         flashcards_aux = []
         for chord_root in settings.roots:
             for progression in settings.progressions:
-                flashcards_aux.append(ProgressionFlashcard(chord_root,progression))
+                flashcards_aux.append(ProgressionFlashcard(chord_root, progression))
         self.deck = flashcards_aux
         
         #print([(flashcard.chord_root,flashcard.chord_quality) for flashcard in self.deck])
@@ -34,7 +34,7 @@ class ProgressionDeck:
         self.current_flashcard = random_pick
         return random_pick
 
-    def process_attempt_input(self,notes_on):
+    def process_attempt_input(self, notes_on):
         all_flashcard_finished = self.current_flashcard.process_attempt(notes_on)
         if all_flashcard_finished:
             self.new_pick()

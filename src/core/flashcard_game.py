@@ -1,18 +1,18 @@
-import FlashcardDeck
-import Renderer
+import src.core.flashcard_deck as flashcard_deck
+import src.ui.render_picker as render_picker
 
 class FlashcardGame:
 
-    def __init__(self,settings) -> None:
-        self.deck = FlashcardDeck.get_flashcard_deck(settings) #ChordDeck(settings,3)
+    def __init__(self, settings) -> None:
+        self.deck = flashcard_deck.get_flashcard_deck(settings) #ChordDeck(settings,3)
         self.deck.new_pick()
-        self.renderer = Renderer.get_renderer(settings,self.deck.current_flashcard)
+        self.renderer = render_picker.get_renderer(settings, self.deck.current_flashcard)
         self.renderer.set_display_flashcard(self.deck.current_flashcard)
 
         self.waiting_for_key_release = False
         ## ESTO NO LO ARREGLO !!!!
 
-    def on_press_key_notes(self,notes_on,skip):
+    def on_press_key_notes(self, notes_on, skip):
         if skip:
             self.renderer.set_skipped_message()
             self.deck.new_pick()
@@ -35,5 +35,5 @@ class FlashcardGame:
             
 
 
-    def render(self,screen):
+    def render(self, screen):
         self.renderer.render(screen)

@@ -1,6 +1,6 @@
 import mido
 
-def try_opening_ports():
+def open_ports():
     try:
         #outport=mido.open_output()
         puerto_abierto = mido.open_input()

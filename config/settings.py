@@ -18,7 +18,7 @@ class Settings:
         #global qualities ## No se si esto es good practice jeje.
         #global upper_triad_inversions
         #global roots
-        with open('Settings.txt') as f:
+        with open('settings.txt') as f:
             data = f.read()
             settings_dictionary = json.loads(data)
             self.mode = self.extract_positives(settings_dictionary["mode"])

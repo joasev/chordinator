@@ -1,16 +1,16 @@
-import Data
-import Chord
+import src.utils.data as Data
+import src.utils.chord_logic as chord_logic
 
 class Note:
 
-    def __init__(self,note_in_text) -> None:
+    def __init__(self, note_in_text) -> None:
         self.note_in_text = note_in_text
 
-    def increase_by(self,interval):
+    def increase_by(self, interval):
         starting_degree = Data.degree_notes[self.note_in_text[0]]
         new_degree = (starting_degree + int(interval[0]) - 1) % 7
 
-        new_note_num = Chord.increase_solfege_note_by_semitones(Data.note_number_names[self.note_in_text], Data.intervals[interval])
+        new_note_num = chord_logic.increase_solfege_note_by_semitones(Data.note_number_names[self.note_in_text], Data.intervals[interval])
         difference = new_note_num - Data.note_number_names[Data.degree_notes_reverse[new_degree]]
         #Becuadros!!!! 
         alteraciones = {0:"", 1:"#", 2:"##", -1:"b", -2:"bb", 11:"b", 10:"bb"}

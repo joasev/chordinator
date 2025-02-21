@@ -1,6 +1,6 @@
-import Data
-from chordFlashcard import ChordFlashcard
-from Note import Note
+import src.utils.data as Data
+from src.core.chord_flashcard import ChordFlashcard
+from src.utils.note import Note
 
 class ProgressionFlashcard:
 

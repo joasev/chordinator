@@ -1,6 +1,6 @@
-import constants
-import Chord
-import Data
+import config.constants as constants
+import src.utils.chord_logic as chord_logic
+import src.utils.data as Data
 import pygame
 
 class Pianito:
@@ -24,7 +24,7 @@ class Pianito:
         
         for i in range(21,109):
             #Note.abs_to_rel_note_num(i)
-            (solfege_note_num,octave) = Chord.get_solfege_note_num_octave(i)
+            (solfege_note_num,octave) = chord_logic.get_solfege_note_num_octave(i)
             print((solfege_note_num,octave))
             whites = Data.piano_key_whites_counter[solfege_note_num] + octave * 7
             left = (key_w + key_interspace) * whites

@@ -1,6 +1,6 @@
 from math import degrees
-import constants
-import PygameCustomUtils
+import config.constants as constants
+import src.utils.pygame_custom_utils as pygame_custom_utils
 
 class ProgressionRenderer:
 
@@ -10,9 +10,9 @@ class ProgressionRenderer:
     def set_display_flashcard(self,flashcard):
         #self.current_flaschard = flashcard
         if flashcard is not None:
-            #print("Play this: "+flashcard.chord_root+""+str(flashcard.chord_quality)+" Upper triad position: "+str(flashcard.upper_triad_position))
+            #print("Play this: "s+flashcard.chord_root+""+str(flashcard.chord_quality)+" Upper triad position: "+str(flashcard.upper_triad_position))
             #Esto es de rendereo de flashCard
-            self.instruction = constants.font1.render(str(flashcard.get_instruction_string()),True, constants.WHITE)
+            self.instruction = constants.get_font().render(str(flashcard.get_instruction_string()),True, constants.WHITE)
             
             self.degrees = []
             for index, chFl in enumerate(flashcard.progression_chords):
@@ -20,7 +20,7 @@ class ProgressionRenderer:
                     color = constants.RED
                 else:
                     color = constants.WHITE
-                self.degrees.append(constants.font1.render(str(chFl.get_degree_string()),True, color))
+                self.degrees.append(constants.get_font().render(str(chFl.get_degree_string()),True, color))
         else:
             (self.instruction,self.text) = (None,None)
             print("Empty flashcard cannot be displayed")
@@ -33,7 +33,7 @@ class ProgressionRenderer:
 
     def set_skipped_message(self):
         print("Skipped!")
-        self.text = constants.font1.render("Skipped!",True, constants.WHITE)
+        self.text = constants.get_font().render("Skipped!",True, constants.WHITE)
 
     def render(self,screen):
         screen.fill(constants.BLACK)

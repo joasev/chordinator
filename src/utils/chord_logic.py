@@ -1,5 +1,4 @@
-import random
-import Data
+import src.utils.data as Data
 
 
 def get_solfege_note_num(note_absolute_num):
@@ -12,8 +11,6 @@ def get_solfege_note_num_octave(note_absolute_num):
 
 def increase_solfege_note_by_semitones(note_num,semitones):
     return (note_num+semitones) % 12
-
-
 
 def get_chord(pressed_notes):
     pressed_notes_solf = set()
@@ -38,9 +35,6 @@ def get_shape(pressed_notes):
     for k,v in Data.upper_shapes.items():
         if sorted_notes_list[1]==sorted_notes_list[0]+v[0] and sorted_notes_list[2]==sorted_notes_list[0]+v[1]:
             return v
-
-
-
 
 def is_chord(pressed_set, chord_set):
     solfege_set = set()
