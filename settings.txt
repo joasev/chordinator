@@ -1,8 +1,8 @@
 {
     "mode" :
         {
-            "chords"  : 1,
-            "progressions"  : 0,
+            "chords"  : 0,
+            "progressions"  : 1,
 
             "progressive" : 0
         },
